@@ -1,9 +1,9 @@
-<div>
+<div class="bloc-search">
   <h3>Search for a movie</h3>
   <input #searchBox id="search-box" (input)="search(searchBox.value)" />
-  <ul class="search-result">
-    <li *ngFor="let movie of movies$ | async">
-      {{movie.Title}}
-    </li>
-  </ul>
+</div>
+<div *ngFor="let movie of movies$ | async"  class="col-3 bloc-result">
+  <img src={{movie.Poster}} alt={{movie.Title}} />
+  <h3>{{movie.Title}}</h3>
+  <h5>{{movie.Year}}</h5>
 </div>
