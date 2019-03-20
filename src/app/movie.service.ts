@@ -19,9 +19,9 @@ export class MovieService {
     if(!term.trim()) {
       return of([])
     }
-    console.log('yo')
-    console.log(this.http.get<Movie[]>(`${this.searchUrl}${term}`))
-    return this.http.get<Movie[]>(`${this.searchUrl}${term}`).pipe(
+    return this.http.get<Movie[]>(`${this.searchUrl}${term}`)
+    .pipe(
+      map( data => data.Search),
       // tap(_=> this.log('found movies matching "${term}"')),
       catchError(this.handleError<Movie[]>('searchMovies', []))
     )
