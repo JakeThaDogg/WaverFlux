@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, map, tap }  from 'rxjs/operators';
 
 import Movie from './movie';
 
@@ -14,6 +14,14 @@ export class MovieService {
   private getMovieUrl = `http://www.omdbapi.com/?apikey=a69f8b6&i=`;
 
   constructor(private http: HttpClient) { }
+
+  getMovie(id: string): Observable<Movie> {
+    const url = `${this.getMovieUrl}${id}`;
+    return this.http.get<Movie>(url).pipe(
+      // tap(_ => this.log(`fetched hero id=${id}`)),
+      catchError(this.handleError<Hero>(`getHero id=${id}`))
+    );
+  }
 
   searchMovies(term: string): Observable<Movie[]> {
     if(!term.trim()) {
