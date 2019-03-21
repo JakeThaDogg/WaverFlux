@@ -11,29 +11,28 @@
   list-style-type: none;
 }
 
+.bloc-search h3:first-child {
+  text-align: center;
+}
+
 .bloc-search {
-  margin-bottom: 5em;
+  padding-top: 1em;
+  color: #ececec;
+  /* background-color: #655DB2; */
+  background-color: #8b4ead;
 }
 
-.search-result li:hover {
-  background-color: #607D8B;
-}
-
-.search-result li a {
-  color: #888;
-  display: block;
-  text-decoration: none;
-}
-
-.search-result li a:hover {
-  color: white;
-}
-.search-result li a:active {
-  color: white;
-}
 #search-box {
-  width: 200px;
-  height: 20px;
+  width: 80%;
+  height: 30px;
+  margin-left: 10%;
+  margin-bottom: 3em;
+  text-align: center;
+  background-color: #454443;
+  /* color: #99e5fa; */
+  color: #ececec;
+  border: none;
+  outline: none;
 }
 
 .bloc-result {
