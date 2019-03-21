@@ -1,0 +1,44 @@
+.bloc-generalInfo, .bloc-facts {
+  text-align: center;
+}
+
+.bloc-details h4 {
+  margin-top: 2em;
+}
+
+.bloc-generalInfo h4 {
+  color: lightgray;
+  mix-blend-mode:difference;
+  margin-top: 5em;
+}
+
+.bloc-details h2 {
+  font-size: 3.5vw;
+  text-align: center;
+}
+
+.bloc-details span {
+  max-width: 50%;
+  margin-left: 5em;
+}
+
+.bloc-details img {
+  margin-left: 10em;
+}
+
+.bloc-details {
+  /* margin-top: 5em; */
+}
+
+.bloc-movie {
+  height: 70em;
+  background-image: url('http://pluspng.com/img-png/films-png-hd-movie-reel-border-clipart-library-4096.png');
+}
+
+.bloc-facts p {
+  font-size: 1.5vw;
+  margin-left: 10em;
+  text-align:justify;
+  width: 75%;
+  margin-bottom: 1.5em;
+}
