@@ -1,0 +1,17 @@
+<div *ngIf="movie">
+  <h2>{{movie.Title}}<span>{{movie.Year}}</span></h2>
+  <h4>
+    <span class="col-3">{{movie.Runtime}}</span>
+    <span class="col-3">{{movie.Released}}</span>
+    <span class="col-3">{{movie.imdbRating}}/10</span>
+    <span class="col-3">{{movie.Country}}</span>
+  </h4>
+  <div>
+    <h4>{{movie.Director}}</h4>
+    <h4>{{movie.Actors}}</h4>
+    <img src={{movie.Poster}} alt={{movie.Title}} />
+  </div>
+  <p>{{movie.Plot}}</p>
+  <h5 class="col-6">{{movie.BoxOffice}}</h5>
+  <h5 class="col-6">{{movie.Production}}</h5>
+</div>
