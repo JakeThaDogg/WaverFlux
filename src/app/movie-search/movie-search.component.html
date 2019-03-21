@@ -3,7 +3,9 @@
   <input #searchBox id="search-box" (input)="search(searchBox.value)" />
 </div>
 <div *ngFor="let movie of movies$ | async"  class="col-3 bloc-result">
-  <img src={{movie.Poster}} alt={{movie.Title}} />
-  <h3>{{movie.Title}}</h3>
-  <h5>{{movie.Year}}</h5>
+  <a href="/movie/{{movie.imdbID}}">
+    <img src={{movie.Poster}} alt={{movie.Title}} />
+    <h3>{{movie.Title}}</h3>
+    <h5>{{movie.Year}}</h5>
+  </a>
 </div>

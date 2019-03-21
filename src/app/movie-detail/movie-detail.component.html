@@ -1,0 +1,26 @@
+<div class="bloc-movie" *ngIf="movie">
+  <div class="bloc-generalInfo">
+    <h4 class="col-12">
+      <span class="col-3">Runtime: {{movie.Runtime}}</span>
+      <span class="col-3">Release Date: {{movie.Released}}</span>
+      <span class="col-3">IMDB Rating: {{movie.imdbRating}}/10</span>
+      <span class="col-3">Country: {{movie.Country}}</span>
+    </h4>
+  </div>
+  <div class="bloc-details col-12">
+    <h2>{{movie.Title}}</h2>
+    <span class="col-8">
+      <h4>Director: {{movie.Director}}</h4>
+      <h4>Actors: {{movie.Actors}}</h4>
+      <h4>Genre: {{movie.Genre}}</h4>
+      <h4>Writer: {{movie.Writer}}</h4>
+      <h4>Awards & Nominations: {{movie.Awards}}</h4>
+    </span>
+    <img class="col-3" src={{movie.Poster}} alt={{movie.Title}} />
+  </div>
+  <div class="bloc-facts">
+    <p class="">{{movie.Plot}}</p>
+    <h5 class="col-6">Box-Office: {{movie.BoxOffice}}</h5>
+    <h5 class="col-6">Production by {{movie.Production}}</h5>
+  </div>
+</div>
