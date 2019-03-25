@@ -1,0 +1,23 @@
+.separator {
+  /* background-color: #6352FF; */
+  /* background-color: #b690cc; */
+  background-color: #0ecbff;
+  height: 0.25em;
+}
+
+div {
+  /* background-color: #544F7F; */
+  background-color: #6E2299;
+}
+
+h1 {
+  font-size: 4.5vw;
+  /* color: #FFF19F; */
+  /* color: #99e5fa; */
+  /* color: #ccf2fc; */
+  color: 	#ececec;
+}
+
+a:hover {
+  text-decoration: none;
+}
