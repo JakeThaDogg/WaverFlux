@@ -12,6 +12,7 @@ import { Movie } from '../movie'
 })
 export class MovieDetailComponent implements OnInit {
   @Input() movie: Movie;
+  isInWatchList: boolean = false;
   constructor(
     private route: ActivatedRoute,
     private movieService: MovieService,
@@ -20,11 +21,21 @@ export class MovieDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getMovie();
+    console.log(JSON.parse(localStorage.getItem("watchlist")))
+  }
+
+  checkWatchList(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.movieService.checkWatchList(id);
   }
 
   getMovie(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.movieService.getMovie(id).subscribe(movie => this.movie = movie)
+    this.movieService.getMovie(id).subscribe(movie => this.movie = movie);
   }
 
+  setWatchlist(idMovie: string): void {
+    this.movieService.setWatchlist(idMovie);
+    this.isInWatchList = true;
+  }
 }

@@ -9,6 +9,7 @@
   </div>
   <div class="bloc-details col-12">
     <h2>{{movie.Title}}</h2>
+    <button (click)="setWatchlist(movie.imdbID)">Add to my watch list</button>
     <span class="col-8">
       <h4>Director: {{movie.Director}}</h4>
       <h4>Actors: {{movie.Actors}}</h4>
