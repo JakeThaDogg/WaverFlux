@@ -9,6 +9,7 @@ import {
 import { Movie } from '../movie';
 import { MovieService } from '../movie.service'
 
+
 @Component({
   selector: 'app-movie-search',
   templateUrl: './movie-search.component.html',
