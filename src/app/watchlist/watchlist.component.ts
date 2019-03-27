@@ -27,11 +27,7 @@ export class WatchlistComponent implements OnInit {
         console.log(movie)
         arrayToReturn.push(movie)
       });
-
-      // arrayToReturn.push(movieToSearch);
-      // arrayToReturn.push(this.movieService.getMovie(moviesID[i]).subscribe(moviedata => moviedata));
     }
-    console.log(arrayToReturn);
     return arrayToReturn;
   }
 }

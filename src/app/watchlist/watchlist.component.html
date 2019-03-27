@@ -1,5 +1,5 @@
 <div class="bloc-watchlist">
-  <div *ngFor="let movie of moviesToWatch">
+  <div class="movie" *ngFor="let movie of moviesToWatch">
     <a href="/movie/{{movie.imdbID}}">
       <h3>{{movie.Title}}</h3>
       <img src={{movie.Poster}} alt={{movie.Title}} />
