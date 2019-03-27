@@ -1,3 +1,8 @@
-<p>
-  watchlist works!
-</p>
+<div class="bloc-watchlist">
+  <div *ngFor="let movie of moviesToWatch">
+    <a href="/movie/{{movie.imdbID}}">
+      <h3>{{movie.Title}}</h3>
+      <img src={{movie.Poster}} alt={{movie.Title}} />
+    </a>
+  </div>
+</div>
