@@ -22,11 +22,13 @@ export class MovieDetailComponent implements OnInit {
   ngOnInit() {
     this.getMovie();
     console.log(JSON.parse(localStorage.getItem("watchlist")))
+    this.checkWatchlist();
   }
 
-  checkWatchList(): void {
+
+  checkWatchlist(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.movieService.checkWatchList(id);
+    this.isInWatchList = this.movieService.checkWatchlist(id);
   }
 
   getMovie(): void {
@@ -36,6 +38,12 @@ export class MovieDetailComponent implements OnInit {
 
   setWatchlist(idMovie: string): void {
     this.movieService.setWatchlist(idMovie);
-    this.isInWatchList = true;
+    this.checkWatchlist();
   }
+
+  removeWatchlist(idMovie: string): void {
+    this.movieService.removeWatchlist(idMovie);
+    this.checkWatchlist();
+  }
+
 }
