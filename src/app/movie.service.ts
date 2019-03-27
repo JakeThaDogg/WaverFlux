@@ -45,14 +45,22 @@ export class MovieService {
       favs.push(idMovie);
     }
     console.log(favs);
-    localStorage.setItem("watchlist", JSON.stringify(favs))
+    localStorage.setItem("watchlist", JSON.stringify(favs));
+  }
+
+  removeWatchlist(idMovie: string): void {
+    let favs = JSON.parse(localStorage.getItem("watchlist"));
+    for(let i = 0; i < favs.length; i++) {
+      if ( favs[i] === idMovie) {
+        favs.splice(i, 1);
+      }
+    }
+    localStorage.setItem("watchlist", JSON.stringify(favs));
   }
 
   checkWatchlist(idMovie: string): void {
     let favs = JSON.parse(localStorage.getItem("watchlist"));
-    let response = favs.filter(movie => movie === idMovie);
-    return console.log(response)
-    // return true
+    return favs.includes(idMovie)
   }
 
   private handleError<T> (operation = 'operation', result?: T) {
