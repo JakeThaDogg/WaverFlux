@@ -1,0 +1,11 @@
+.movie {
+  height: 25em;
+}
+
+.movie img {
+  height: 75%;
+}
+
+.movie h3 {
+  text-align: center;
+}
