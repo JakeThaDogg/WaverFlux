@@ -1,9 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <a href="/"><h1>
-    {{ title }}
-  </h1></a>
-  <div class="separator"></div>
+<div class="bloc-title {{THEME}}"  style="text-align:center">
+  <a href="/">
+    <h1>
+      {{ title }}
+    </h1>
+  </a>
+  <button *ngIf="THEME === 'original'" (click)="switchTheme('retro')">Switch theme</button>
+  <button *ngIf="THEME === 'retro'" (click)="switchTheme('original')">Switch theme</button>
+  <div class="separator {{THEME}}"></div>
 </div>
 
 <router-outlet></router-outlet>
