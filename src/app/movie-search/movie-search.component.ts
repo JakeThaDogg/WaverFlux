@@ -7,7 +7,8 @@ import {
   } from 'rxjs/operators';
 
 import { Movie } from '../movie';
-import { MovieService } from '../movie.service'
+import { MovieService } from '../movie.service';
+import { GeneralService } from '../general.service';
 
 
 @Component({
@@ -18,8 +19,12 @@ import { MovieService } from '../movie.service'
 export class MovieSearchComponent implements OnInit {
   movies$: Observable<Movie[]>;
   private searchTerms = new Subject<string>();
+  const THEME;
 
-  constructor(private movieService: MovieService) { }
+  constructor(
+    private movieService: MovieService,
+    private generalService: GeneralService,
+  ) { }
 
   search(term: string): void {
     this.searchTerms.next(term);
@@ -31,6 +36,7 @@ export class MovieSearchComponent implements OnInit {
       distinctUntilChanged(),
       switchMap((term: string) => this.movieService.searchMovies(term))
     );
+    this.generalService.currentTheme.subscribe(theme => this.THEME = theme);
   }
 
 }
