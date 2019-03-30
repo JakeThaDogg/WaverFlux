@@ -19,7 +19,7 @@ export class WatchlistComponent implements OnInit {
     console.log(this.moviesToWatch);
   }
 
-  getMovies(): array {
+  getMovies(): Movie[] {
     let moviesID = JSON.parse(localStorage.getItem("watchlist"));
     let arrayToReturn = [];
     for(let i = 0; i < moviesID.length; i++) {
